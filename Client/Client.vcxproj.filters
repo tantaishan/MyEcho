@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="gif">
+      <UniqueIdentifier>{8a6256e2-7bd1-4270-a453-3ebb9ec7569c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="biz">
+      <UniqueIdentifier>{b7cda1b9-cd57-4496-b6f6-f3c491073d13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="media">
+      <UniqueIdentifier>{f77a0ce4-ae0e-429e-b682-732b42a6f07f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Client.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TransEdit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PromptDialog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemTray.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TopMenuWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="typedef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TrayMenuWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TransChatWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskNotifyWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FileMgr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="downloader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DulibEx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TransChatWebWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CefWebClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TextTransDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ImgTransDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VoiceTransDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CtxFeedbackWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gif\GifAnimation.h">
+      <Filter>gif</Filter>
+    </ClInclude>
+    <ClInclude Include="gif\PictureEx.h">
+      <Filter>gif</Filter>
+    </ClInclude>
+    <ClInclude Include="gif\winimage.h">
+      <Filter>gif</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayGifWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PictureWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NewerTaskWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="media\WaveDef.h">
+      <Filter>media</Filter>
+    </ClInclude>
+    <ClInclude Include="media\WavePlayer.h">
+      <Filter>media</Filter>
+    </ClInclude>
+    <ClInclude Include="biz\EasemobBizApi.h">
+      <Filter>biz</Filter>
+    </ClInclude>
+    <ClInclude Include="biz\TransnBizApi.h">
+      <Filter>biz</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioPlayer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="media\MCIPlayer.h">
+      <Filter>media</Filter>
+    </ClInclude>
+    <ClInclude Include="FolderFileSelectDialog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="media\AMRDecoder.h">
+      <Filter>media</Filter>
+    </ClInclude>
+    <ClInclude Include="media\WaveRecorder.h">
+      <Filter>media</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientV8ExtHandler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="WebBrowser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BrowserUiHandler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CrashHandler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewImageWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ImgToolWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Client.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TransEdit.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PromptDialog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemTray.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TopMenuWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TrayMenuWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TransChatWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskNotifyWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FileMgr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="downloader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DulibEx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TransChatWebWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CefWebClient.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TextTransDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ImgTransDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VoiceTransDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CtxFeedbackWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gif\GifAnimation.cpp">
+      <Filter>gif</Filter>
+    </ClCompile>
+    <ClCompile Include="gif\PictureEx.cpp">
+      <Filter>gif</Filter>
+    </ClCompile>
+    <ClCompile Include="gif\winimage.cpp">
+      <Filter>gif</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayGifWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PictureWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NewerTaskWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="media\WavePlayer.cpp">
+      <Filter>media</Filter>
+    </ClCompile>
+    <ClCompile Include="biz\EasemobBizApi.cpp">
+      <Filter>biz</Filter>
+    </ClCompile>
+    <ClCompile Include="biz\TransnBizApi.cpp">
+      <Filter>biz</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioPlayer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="media\MCIPlayer.cpp">
+      <Filter>media</Filter>
+    </ClCompile>
+    <ClCompile Include="FolderFileSelectDialog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="media\AMRDecoder.cpp">
+      <Filter>media</Filter>
+    </ClCompile>
+    <ClCompile Include="media\WaveRecorder.cpp">
+      <Filter>media</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientV8ExtHandler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="WebBrowser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="config.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CrashHandler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewImageWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ImgToolWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Client.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Client.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

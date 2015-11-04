@@ -1,0 +1,698 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="file">
+      <UniqueIdentifier>{a5615816-d485-4a2f-90cd-12f5b91058fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="registry">
+      <UniqueIdentifier>{a74bc061-6455-4bd7-910d-0de5a3c440ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system">
+      <UniqueIdentifier>{3a087348-fdc4-4d98-bd36-6f2bf825fc6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="process">
+      <UniqueIdentifier>{4bacd836-2974-4013-932f-04c507304c7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="parser">
+      <UniqueIdentifier>{318962d1-9553-48ff-9112-ed9333eea1af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="debug">
+      <UniqueIdentifier>{93106ce1-345b-4e33-880f-d93f6999f540}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hash">
+      <UniqueIdentifier>{712b51e4-2edc-4586-a674-3c480e5708ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thread">
+      <UniqueIdentifier>{4c957c52-be66-4c73-8be6-c69bb3c199c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="zip">
+      <UniqueIdentifier>{79c6bea9-a674-451d-bdaa-1453fa1ce92a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="json">
+      <UniqueIdentifier>{b2561201-d69a-4d8b-8cf5-c762f97e5786}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{71d7b24e-6da8-4177-ae05-17f0cb20f82e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util">
+      <UniqueIdentifier>{fdc353f7-c487-4933-8440-91b99e7ac4f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="client">
+      <UniqueIdentifier>{f34d4a3c-2781-4590-ae65-12a2cc69c61b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wmi">
+      <UniqueIdentifier>{57de72f5-0888-48a9-866d-018bc444aa72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="string">
+      <UniqueIdentifier>{bb698dae-fcb0-41ee-8f48-3b3f399e1cf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="curl">
+      <UniqueIdentifier>{8fc7340f-9f23-4663-a984-53e5712e7053}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crypt">
+      <UniqueIdentifier>{8fe7b935-dcc9-4af0-b2f2-d2a04b765fd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scm">
+      <UniqueIdentifier>{7ae88016-3f21-4236-a92a-ebe73f1e74d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="net">
+      <UniqueIdentifier>{ade7648d-09e9-4607-9917-5c9412bea5e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ext">
+      <UniqueIdentifier>{4f0bd67e-bd96-4a75-ac80-2c8d615dcdef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="log4cpp">
+      <UniqueIdentifier>{10036d4e-bb3f-4e52-b866-b314e367738b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="log4cpp\threading">
+      <UniqueIdentifier>{cff97a7e-64e0-4bbb-9276-14da396aed3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="config">
+      <UniqueIdentifier>{981becd6-5803-4fd0-982f-4edbe946f406}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sqlite">
+      <UniqueIdentifier>{df094a0e-b08f-41df-b297-f57c5006dc98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="conv">
+      <UniqueIdentifier>{fba0edbe-99e3-4567-b875-1005c046f30e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Core.h" />
+    <ClInclude Include="file\FileManager.h">
+      <Filter>file</Filter>
+    </ClInclude>
+    <ClInclude Include="debug\ConsoleOutput.h">
+      <Filter>debug</Filter>
+    </ClInclude>
+    <ClInclude Include="hash\md5.h">
+      <Filter>hash</Filter>
+    </ClInclude>
+    <ClInclude Include="hash\MyMD5.h">
+      <Filter>hash</Filter>
+    </ClInclude>
+    <ClInclude Include="zip\unzip.h">
+      <Filter>zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zip\zip.h">
+      <Filter>zip</Filter>
+    </ClInclude>
+    <ClInclude Include="parser\ini.h">
+      <Filter>parser</Filter>
+    </ClInclude>
+    <ClInclude Include="parser\INIReader.h">
+      <Filter>parser</Filter>
+    </ClInclude>
+    <ClInclude Include="process\ProcessUtil.h">
+      <Filter>process</Filter>
+    </ClInclude>
+    <ClInclude Include="system\SystemInfo.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="thread\Locker.h">
+      <Filter>thread</Filter>
+    </ClInclude>
+    <ClInclude Include="registry\registry.h">
+      <Filter>registry</Filter>
+    </ClInclude>
+    <ClInclude Include="json\autolink.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\config.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\features.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\forwards.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json_batchallocator.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json_tool.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\reader.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\value.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\writer.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\ResourceMgr.h">
+      <Filter>resource</Filter>
+    </ClInclude>
+    <ClInclude Include="util\StringUtil.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="client\BlockUserCheck.h">
+      <Filter>client</Filter>
+    </ClInclude>
+    <ClInclude Include="client\DefaultBlockRule.h">
+      <Filter>client</Filter>
+    </ClInclude>
+    <ClInclude Include="wmi\WmiQueryHelper.h">
+      <Filter>wmi</Filter>
+    </ClInclude>
+    <ClInclude Include="string\tstring.h">
+      <Filter>string</Filter>
+    </ClInclude>
+    <ClInclude Include="string\base64.h">
+      <Filter>string</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\curl.h">
+      <Filter>curl</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\curlbuild.h">
+      <Filter>curl</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\curlcpp.h">
+      <Filter>curl</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\curlrules.h">
+      <Filter>curl</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\curlver.h">
+      <Filter>curl</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\easy.h">
+      <Filter>curl</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\mprintf.h">
+      <Filter>curl</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\multi.h">
+      <Filter>curl</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\stdcheaders.h">
+      <Filter>curl</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\typecheck-gcc.h">
+      <Filter>curl</Filter>
+    </ClInclude>
+    <ClInclude Include="client\ClientAPI.h">
+      <Filter>client</Filter>
+    </ClInclude>
+    <ClInclude Include="client\ClientVersion.h">
+      <Filter>client</Filter>
+    </ClInclude>
+    <ClInclude Include="client\UidManager.h">
+      <Filter>client</Filter>
+    </ClInclude>
+    <ClInclude Include="crypt\XorCrypt.h">
+      <Filter>crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="scm\SCMHandler.h">
+      <Filter>scm</Filter>
+    </ClInclude>
+    <ClInclude Include="system\CStorageSerial.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="net\GenericHTTPClient.h">
+      <Filter>net</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\ExtHandler.h">
+      <Filter>ext</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\AbortAppender.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\Appender.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\AppendersFactory.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\AppenderSkeleton.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\BasicConfigurator.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\BasicLayout.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\BufferingAppender.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\Category.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\CategoryStream.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\config-MinGW32.h">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\config-openvms.h">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\Configurator.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\config-win32.h">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\config-win32-stlport-boost.h">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\convenience.h">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\DailyRollingFileAppender.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\Export.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\FactoryParams.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\FileAppender.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\Filter.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\FixedContextCategory.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\HierarchyMaintainer.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\IdsaAppender.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\Layout.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\LayoutAppender.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\LayoutsFactory.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\LevelEvaluator.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\Localtime.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\LoggingEvent.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\Manipulator.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\NDC.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\NTEventLogAppender.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\OstreamAppender.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\PassThroughLayout.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\PatternLayout.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\Portability.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\PortabilityImpl.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\Priority.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\Properties.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\PropertyConfigurator.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\PropertyConfiguratorImpl.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\RemoteSyslogAppender.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\RollingFileAppender.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\SimpleConfigurator.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\SimpleLayout.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\SmtpAppender.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\StringQueueAppender.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\StringUtil.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\SyslogAppender.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\TimeStamp.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\TriggeringEventEvaluator.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\TriggeringEventEvaluatorFactory.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\Win32DebugAppender.hh">
+      <Filter>log4cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\threading\BoostThreads.hh">
+      <Filter>log4cpp\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\threading\DummyThreads.hh">
+      <Filter>log4cpp\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\threading\MSThreads.hh">
+      <Filter>log4cpp\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\threading\OmniThreads.hh">
+      <Filter>log4cpp\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\threading\PThreads.hh">
+      <Filter>log4cpp\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="log4cpp\threading\Threading.hh">
+      <Filter>log4cpp\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="config\Configuration.h">
+      <Filter>config</Filter>
+    </ClInclude>
+    <ClInclude Include="string\string_helper.h">
+      <Filter>string</Filter>
+    </ClInclude>
+    <ClInclude Include="parser\base_parser.h">
+      <Filter>parser</Filter>
+    </ClInclude>
+    <ClInclude Include="parser\ini_parser.h">
+      <Filter>parser</Filter>
+    </ClInclude>
+    <ClInclude Include="sqllite\CppSQLite3.h">
+      <Filter>sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="sqllite\sqlite3.h">
+      <Filter>sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h" />
+    <ClInclude Include="types.h" />
+    <ClInclude Include="conv\conv.h">
+      <Filter>conv</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="file\FileManager.cpp">
+      <Filter>file</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\ConsoleOutput.cpp">
+      <Filter>debug</Filter>
+    </ClCompile>
+    <ClCompile Include="hash\md5.cpp">
+      <Filter>hash</Filter>
+    </ClCompile>
+    <ClCompile Include="hash\MyMD5.cpp">
+      <Filter>hash</Filter>
+    </ClCompile>
+    <ClCompile Include="zip\unzip.cpp">
+      <Filter>zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zip\zip.cpp">
+      <Filter>zip</Filter>
+    </ClCompile>
+    <ClCompile Include="parser\ini.c">
+      <Filter>parser</Filter>
+    </ClCompile>
+    <ClCompile Include="parser\INIReader.cpp">
+      <Filter>parser</Filter>
+    </ClCompile>
+    <ClCompile Include="process\ProcessUtil.cpp">
+      <Filter>process</Filter>
+    </ClCompile>
+    <ClCompile Include="system\SystemInfo.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="thread\Locker.cpp">
+      <Filter>thread</Filter>
+    </ClCompile>
+    <ClCompile Include="registry\registry.cpp">
+      <Filter>registry</Filter>
+    </ClCompile>
+    <ClCompile Include="json\json_reader.cpp">
+      <Filter>json</Filter>
+    </ClCompile>
+    <ClCompile Include="json\json_value.cpp">
+      <Filter>json</Filter>
+    </ClCompile>
+    <ClCompile Include="json\json_writer.cpp">
+      <Filter>json</Filter>
+    </ClCompile>
+    <ClCompile Include="resource\ResourceMgr.cpp">
+      <Filter>resource</Filter>
+    </ClCompile>
+    <ClCompile Include="util\StringUtil.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="client\BlockUserCheck.cpp">
+      <Filter>client</Filter>
+    </ClCompile>
+    <ClCompile Include="wmi\WmiQueryHelper.cpp">
+      <Filter>wmi</Filter>
+    </ClCompile>
+    <ClCompile Include="string\tstring.cpp">
+      <Filter>string</Filter>
+    </ClCompile>
+    <ClCompile Include="string\base64.cpp">
+      <Filter>string</Filter>
+    </ClCompile>
+    <ClCompile Include="curl\curlcpp.cpp">
+      <Filter>curl</Filter>
+    </ClCompile>
+    <ClCompile Include="client\ClientAPI.cpp">
+      <Filter>client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\ClientVersion.cpp">
+      <Filter>client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\UidManager.cpp">
+      <Filter>client</Filter>
+    </ClCompile>
+    <ClCompile Include="crypt\XorCrypt.cpp">
+      <Filter>crypt</Filter>
+    </ClCompile>
+    <ClCompile Include="scm\SCMHandler.cpp">
+      <Filter>scm</Filter>
+    </ClCompile>
+    <ClCompile Include="system\CStorageSerial.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="net\GenericHTTPClient.cpp">
+      <Filter>net</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\ExtHandler.cpp">
+      <Filter>ext</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\AbortAppender.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\Appender.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\AppendersFactory.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\AppenderSkeleton.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\BasicConfigurator.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\BasicLayout.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\BufferingAppender.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\Category.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\CategoryStream.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\Configurator.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\DailyRollingFileAppender.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\DllMain.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\DummyThreads.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\FactoryParams.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\FileAppender.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\Filter.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\FixedContextCategory.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\HierarchyMaintainer.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\IdsaAppender.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\LayoutAppender.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\LayoutsFactory.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\LevelEvaluator.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\Localtime.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\LoggingEvent.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\Manipulator.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\MSThreads.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\NDC.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\NTEventLogAppender.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\OmniThreads.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\OstreamAppender.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\PassThroughLayout.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\PatternLayout.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\PortabilityImpl.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\Priority.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\Properties.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\PropertyConfigurator.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\PropertyConfiguratorImpl.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\PThreads.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\RemoteSyslogAppender.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\RollingFileAppender.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\SimpleConfigurator.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\SimpleLayout.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\SmtpAppender.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\snprintf.c">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\StringQueueAppender.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\StringUtil.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\SyslogAppender.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\TimeStamp.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\TriggeringEventEvaluatorFactory.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log4cpp\Win32DebugAppender.cpp">
+      <Filter>log4cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="config\Configuration.cpp">
+      <Filter>config</Filter>
+    </ClCompile>
+    <ClCompile Include="string\string_helper.cpp">
+      <Filter>string</Filter>
+    </ClCompile>
+    <ClCompile Include="parser\ini_parser.cpp">
+      <Filter>parser</Filter>
+    </ClCompile>
+    <ClCompile Include="sqllite\CppSQLite3.cpp">
+      <Filter>sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="sqllite\sqlite3.c">
+      <Filter>sqlite</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="json\json_internalarray.inl">
+      <Filter>json</Filter>
+    </None>
+    <None Include="json\json_internalmap.inl">
+      <Filter>json</Filter>
+    </None>
+    <None Include="json\json_valueiterator.inl">
+      <Filter>json</Filter>
+    </None>
+    <None Include="log4cpp\Makefile.am">
+      <Filter>log4cpp</Filter>
+    </None>
+    <None Include="log4cpp\Makefile.in">
+      <Filter>log4cpp</Filter>
+    </None>
+  </ItemGroup>
+</Project>

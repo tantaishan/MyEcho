@@ -1,0 +1,696 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="a_refl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="agc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="autocorr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="az_lsp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="b_cn_cod.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="basic_op.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="bgnscd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="bits2prm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="c_g_aver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="c2_9pf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="c2_11pf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="c3_14pf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="c4_17pf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="c8_31pf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="c1035pf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="calc_cor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="calc_en.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="cbsearch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="cl_ltp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="cnst.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="cnst_vad.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="cod_amr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="convolve.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="copy.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="cor_h.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="count.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="d_gain_c.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="d_gain_p.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="d_homing.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="d_plsf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="d2_9pf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="d2_11pf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="d3_14pf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="d4_17pf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="d8_31pf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="d1035pf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dec_amr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dec_gain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dec_lag3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dec_lag6.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dtx_dec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dtx_enc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="e_homing.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ec_gains.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="enc_lag3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="enc_lag6.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ex_ctrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="frame.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="g_adapt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="g_code.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="g_pitch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gain_q.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gc_pred.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gmed_n.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="hp_max.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="int_lpc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="int_lsf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="inter_36.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="inv_sqrt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lag_wind.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="levinson.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="log2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lpc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lsfwt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lsp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lsp_avg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lsp_az.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lsp_lsf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="mac_32.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="mode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="n_proc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ol_ltp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="oper_32b.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="p_ol_wgh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ph_disp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pitch_fr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pitch_ol.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="post_pro.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pow2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pre_big.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pre_proc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pred_lt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="preemph.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="prm2bits.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pstfilt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="q_gain_c.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="q_gain_p.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="q_plsf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="qgain475.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="qgain795.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="qua_gain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="reorder.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="residu.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="s10_8pf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="set_sign.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="set_zero.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sid_sync.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sp_dec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sp_enc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="spreproc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="spstproc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sqrt_l.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="strfunc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="syn_filt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ton_stab.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="typedef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="typedefs.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vad.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vad1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vad2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vadname.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="weight_a.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="weight_a.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vadname.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vad2.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vad1.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ton_stab.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="syn_filt.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="strfunc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="sqrt_l.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="spstproc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="spreproc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="sp_enc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="sp_dec.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="sid_sync.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="set_zero.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="set_sign.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="s10_8pf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="residu.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="reorder.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="r_fft.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="qua_gain.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="qgain795.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="qgain475.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="q_plsf_5.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="q_plsf_3.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="q_plsf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="q_gain_p.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="q_gain_c.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pstfilt.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="prm2bits.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="preemph.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pred_lt.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pre_proc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pre_big.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pow2.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="post_pro.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pitch_ol.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pitch_fr.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ph_disp.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="p_ol_wgh.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="oper_32b.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ol_ltp.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="n_proc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="mac_32.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="lsp_lsf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="lsp_az.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="lsp_avg.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="lsp.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="lsfwt.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="lpc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="log2.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="lflg_upd.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="levinson.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="lag_wind.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="inv_sqrt.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="inter_36.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="int_lsf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="int_lpc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="hp_max.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gmed_n.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gc_pred.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gain_q.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="g_pitch.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="g_code.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="g_adapt.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ex_ctrl.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="enc_lag6.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="enc_lag3.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ec_gains.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="e_homing.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dtx_enc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dtx_dec.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="decoder.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dec_lag6.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dec_lag3.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dec_gain.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dec_amr.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="d1035pf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="d8_31pf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="d4_17pf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="d3_14pf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="d2_11pf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="d2_9pf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="d_plsf_5.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="d_plsf_3.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="d_plsf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="d_homing.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="d_gain_p.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="d_gain_c.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="count.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="cor_h.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="copy.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="convolve.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="coder.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="cod_amr.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="cl_ltp.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="cbsearch.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="calc_en.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="calc_cor.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="c1035pf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="c8_31pf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="c4_17pf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="c3_14pf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="c2_11pf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="c2_9pf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="c_g_aver.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="bits2prm.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="bgnscd.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="basicop2.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="b_cn_cod.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="az_lsp.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="autocorr.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="agc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="a_refl.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,716 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ME 专人翻译</title>
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="./css/index.css" />
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="Component/web-im-master/sdk/strophe.js"></script>
+<script src="Component/web-im-master/sdk/json2.js"></script>
+<script src="Component/web-im-master/sdk/easemob.im-1.0.7.js"></script>
+<script src="js/easemob.im.config.js"></script>
+<script src="js/bootstrap.js"></script>
+</head>
+<body>
+
+<div id="trans_wrap">
+	<div id="trans_list" class="trans_list scroll-pane">
+		<ul><!-- 
+			<li class="l">
+				<div class="avatar"><img src="./images/photo.png" /></div>
+				<p>你好明洞这么用韩语说？</p>
+			</li>
+			<li class="r">
+				<div class="avatar"><img src="./images/photo.png" /></div>
+				<p>请问需要语音还是文字回复</p>
+			</li>
+			<li class="l">
+				<div class="avatar"><img src="./images/photo.png" /></div>
+				<p>语音</p>
+			</li>
+			<li class="r">
+				<div class="avatar"><img src="./images/photo.png" /></div>
+				<p><i class="voice stop" data-time="3" data-url=="" data-file="" onclick="playAudio(this)"></i><span class="time">3s</span></p>
+			</li>
+			<li class="l">
+				<div class="avatar"><img src="./images/photo.png" /></div>
+				<p><img src="./images/p1.jpg" /></p>
+			</li>
+			<li class="l">
+				<div class="avatar"><img src="./images/photo.png" /></div>
+				<p><i class="voice stop" data-time="2" data-url=="" data-file="" onclick="playAudio(this)"></i><span class="time">2s</span></p>
+			</li>
+			<li class="r">
+				<div class="avatar"><img src="./images/photo.png" /></div>
+				<p><img src="./images/p1.jpg" /></p>
+			</li> -->
+		</ul>
+	</div>
+	<div class="status_bar" id="status_bar">
+		<input type="button" name="" value="发送" class="send" id="btn_send_voice" />
+		<input type="button" name="" value="取消" class="cancel" id="cancel" />
+		<span>录音中</span>
+	</div>
+	<div class="send_wrap">
+		<div class="send_box">
+			<textarea class="txt_message" id="txt_message"></textarea>
+			<div class="send_bar">
+				<input type="button" name="" value="发送" class="btn_send" id="send_btn" />
+				<div class="voice_time">会话时长：<span id="time_lasts">00:00:00</span></div>
+				<a href="javascript:;" class="send_voice" id="send_voice">发送音频</a>
+			</div>
+		</div>
+	</div>
+	<link rel="stylesheet" type="text/css" href="Component/JScrollPane/style/jquery.jscrollpane.css" media="all" />
+	<script type="text/javascript" src="Component/JScrollPane/script/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="Component/JScrollPane/script/jquery.jscrollpane.min.js"></script>
+	<script type="text/javascript" id="sourcecode">
+		$(window).load(function () {
+			$('.scroll-pane').jScrollPane();
+		});
+	</script>
+</div>
+<!-- 环信 -->
+<script type="text/javascript">
+	var appkey = "te-8#te";
+	//var appkey = "easemob-demo#chatdemoui";
+	var textSending = false;
+	var audioMaking = false;//是否正在录音
+	var cid = null;   
+	var conn = null;
+	var fileInputId = "fileInput";
+
+	var curUserId = Cef.User.GetUserId(); //'samtan';//to
+	//alert(curUserId);
+	var curChatUserId = Cef.User.GetCustomerId(); //'xiyunfang';
+	//alert(curChatUserId);
+	var curChatUserAvatar = './images/photo.png';
+	var curUserAvatar = './images/photo.png';
+	
+    var swfupload = null;
+	var flashFilename = '';
+    var audioDom = [];
+
+	//计时器
+	var count = 0, timeLoop;
+	var countTime = function() {
+		count++;
+		var str = '';
+		var h = Math.floor(count/3600);
+		if(h<10) str = '0'+h+':';
+		else str = h+':';
+
+		var m = count%3600;
+		m = Math.floor(m/60);
+		if(m<10) str += '0'+m+':';
+		else str += m+':';
+
+		var s = count%60;
+		if(s<10) str += '0'+s;
+		else str += s;
+
+		$('#time_lasts').text(str);
+	}
+	timeLoop = setInterval('countTime()', 1000);
+    
+    //处理不支持<audio>标签的浏览器，当前只支持MP3
+    var playAudioShim = function(dom, url, t) {
+        var d = $(dom),
+            play = d.next(),
+            pause = play.next(),
+            u = url;
+        if(!d.jPlayer) return;
+        Easemob.im.Helper.getIEVersion() < 9 && audioDom.push(d);
+        d.jPlayer({
+            ready: function () {
+                $(this).jPlayer("setMedia", {
+                    mp3: u
+                });
+            },
+            solution: (Easemob.im.Helper.getIEVersion() != 9 ? "html, flash" : "flash"),
+            swfPath: "sdk/jplayer",
+            supplied: "mp3",
+            ended: function() {
+                pause.hide();
+                play.show();
+            }
+        });
+        play.on('click', function(){
+            d.jPlayer('play');
+            play.hide();
+            pause.show();
+        });
+        pause.on('click', function(){
+            d.jPlayer('pause');
+            play.show();
+            pause.hide();
+        });
+    }
+    
+    //处理不支持异步上传的浏览器,使用swfupload作为解决方案
+    var uploadType = null;
+	var uploadShim = function(fileInputId) {
+		var pageTitle = document.title;
+		var uploadBtn = $('#' + fileInputId);
+		if(typeof SWFUpload === 'undefined' || uploadBtn.length < 1) return;
+
+		return new SWFUpload({ 
+			file_post_name: 'file'
+			, flash_url: "sdk/swfupload/swfupload.swf"
+			, button_placeholder_id: fileInputId
+			, button_width: uploadBtn.width() || 120
+			, button_height: uploadBtn.height() || 30
+			, button_cursor: SWFUpload.CURSOR.HAND
+			, button_text: '点击上传'
+			, button_window_mode: SWFUpload.WINDOW_MODE.TRANSPARENT
+			, file_size_limit: 10485760
+			, file_upload_limit: 0
+			, file_queued_handler: function(file) {
+				if(this.getStats().files_queued > 1) {
+					this.cancelUpload();
+				}
+				var checkType = uploadType === 'audio' ? audtype : pictype;
+				if(!checkType[file.type.slice(1)]) {
+					conn.onError({
+						type : EASEMOB_IM_UPLOADFILE_ERROR,
+						msg : '不支持此文件类型' + file.type
+					});
+					this.setButtonText('点击上传');
+					this.cancelUpload();
+				} else if(10485760 < file.size) {
+					conn.onError({
+						type : EASEMOB_IM_UPLOADFILE_ERROR,
+						msg : '文件大小超过限制！请上传大小不超过10M的文件'
+					});
+					this.setButtonText('点击上传');
+					this.cancelUpload();
+				} else {
+					this.setButtonText(file.name);
+					flashFilename = file.name;
+				}
+			}
+			, file_dialog_start_handler: function() {
+				if(Easemob.im.Helper.getIEVersion() < 10) {
+					document.title = pageTitle;
+				}
+			}
+			, upload_error_handler: function(file, code, msg){
+				if(code != SWFUpload.UPLOAD_ERROR.FILE_CANCELLED && code != SWFUpload.UPLOAD_ERROR.UPLOAD_LIMIT_EXCEEDED && code != SWFUpload.UPLOAD_ERROR.FILE_VALIDATION_FAILED) {
+					this.uploadOptions.onFileUploadError && this.uploadOptions.onFileUploadError({type: EASEMOB_IM_UPLOADFILE_ERROR, msg: msg});
+				}
+			}
+			, upload_complete_handler: function(){
+				this.setButtonText('点击上传');
+			}
+			, upload_success_handler: function(file, response){
+				//处理上传成功的回调
+				try{
+					var res = Easemob.im.Helper.parseUploadResponse(response);
+
+					res = $.parseJSON(res);
+					res.filename = file.name;
+					this.uploadOptions.onFileUploadComplete && this.uploadOptions.onFileUploadComplete(res);
+				} catch (e) {
+					conn.onError({
+						type : EASEMOB_IM_UPLOADFILE_ERROR,
+						msg : '上传图片发生错误'
+					});
+				}
+			}
+		});
+	}
+    
+	//提供上传接口
+	var flashUpload = function(url, options){
+		if(swfupload.settings.button_text == '点击上传') {
+			conn.onError({
+				type : EASEMOB_IM_UPLOADFILE_ERROR,
+				msg : '请选择文件'
+			});
+			return;
+		}
+		swfupload.setUploadURL(url);
+		swfupload.uploadOptions = options;
+		swfupload.startUpload();
+	}
+    var handleConfig = function() {
+        if(Easemob.im.Helper.getIEVersion() < 10) {
+            Easemob.im.config.https = location.protocol == 'https:' ? true : false;
+            if(!Easemob.im.config.https) {
+                if(Easemob.im.config.xmppURL.indexOf('https') == 0) {
+                    Easemob.im.config.xmppURL = Easemob.im.config.xmppURL.replace(/^https/, 'http');
+                }
+                if(Easemob.im.config.apiURL.indexOf('https') == 0) {
+                    Easemob.im.config.apiURL = Easemob.im.config.apiURL.replace(/^https/, 'http');
+                }
+            } else {
+                if(Easemob.im.config.xmppURL.indexOf('https') != 0) {
+                    Easemob.im.config.xmppURL = Easemob.im.config.xmppURL.replace(/^http/, 'https');
+                }
+                if(Easemob.im.config.apiURL.indexOf('https') != 0) {
+                    Easemob.im.config.apiURL = Easemob.im.config.apiURL.replace(/^http/, 'https');
+                }
+            }
+        }
+    }
+
+    window.URL = window.URL || window.webkitURL || window.mozURL
+            || window.msURL;
+
+	handleConfig();
+	conn = new Easemob.im.Connection();
+	//初始化连接
+	conn.init({
+		https : Easemob.im.config.https,
+		url: Easemob.im.config.xmppURL,
+		//当连接成功时的回调方法
+		onOpened : function() {
+			handleOpen(conn);
+		},
+		//当连接关闭时的回调方法
+		onClosed : function() {
+			handleClosed();
+		},
+		//收到文本消息时的回调方法
+		onTextMessage : function(message) {
+			handleTextMessage(message);
+		},
+		//收到表情消息时的回调方法
+		onEmotionMessage : function(message) {
+			handleEmotion(message);
+		},
+		//收到图片消息时的回调方法
+		onPictureMessage : function(message) {
+			handlePictureMessage(message);
+		},
+		//收到音频消息的回调方法
+		onAudioMessage : function(message) {
+			handleAudioMessage(message);
+		},
+		//收到位置消息的回调方法
+		onLocationMessage : function(message) {
+			handleLocationMessage(message);
+		},
+		//收到文件消息的回调方法
+		onFileMessage : function(message) {
+			handleFileMessage(message);
+		},
+		//收到视频消息的回调方法
+		onVideoMessage : function(message) {
+			handleVideoMessage(message);
+		},
+		//收到联系人订阅请求的回调方法
+		onPresence : function(message) {
+			handlePresence(message);
+		},
+		//收到联系人信息的回调方法
+		onRoster : function(message) {
+			handleRoster(message);
+		},
+		//收到群组邀请时的回调方法
+		onInviteMessage : function(message) {
+			handleInviteMessage(message);
+		},
+		//异常时的回调方法
+		onError : function(message) {
+			handleError(message);
+		}
+	});
+	
+	var handleOpen = function(){
+		console.log("login!");
+		conn.setPresence();///设置登录上线；
+        //启动心跳
+        if (conn.isOpened()) {
+            conn.heartBeat(conn);
+        }
+
+		//发送问候语
+        var to = curChatUserId;
+        if (to == null) {
+            return;
+        }
+		var msg = Cef.User.GetFirstSentence();
+        var options = {
+            to : to,
+            msg : msg,
+            type : "chat"
+        };
+        //easemobwebim-sdk发送文本消息的方法 to为发送给谁，msg为文本消息对象
+        conn.sendTextMessage(options);
+        //当前登录人发送的信息在聊天窗口中原样显示
+        var msgtext = msg.replace(/\n/g, '<br>');
+		appendMsg(0, msgtext, 'text');
+	};
+    //异常情况下的处理方法
+    var handleError = function(e) {
+        //e && e.upload && $('#fileModal').modal('hide');
+        if (curUserId == null) {
+            closeShow(e.msg + ",请重新登录");
+        } else {
+            var msg = e.msg;
+            if (e.type == EASEMOB_IM_CONNCTION_SERVER_CLOSE_ERROR) {
+                if (msg == "" || msg == 'unknown' ) {
+					closeShow('服务器断开连接,可能是因为在别处登录');
+                } else {
+                    closeShow("服务器断开连接");
+                }
+            } else if (e.type === EASEMOB_IM_CONNCTION_SERVER_ERROR) {
+                if (msg.toLowerCase().indexOf("user removed") != -1) {
+                    closeShow("用户已经在管理后台删除");
+                }
+            } else {
+                closeShow(msg);
+            }
+        }
+		if(timeLoop) clearInterval(timeLoop);//清除计时器
+		if(playingT) clearTimeout(playingT);
+		$('#trans_list ul li').eq(play_index).find('i').removeClass('play').addClass('stop');
+        conn.stopHeartBeat(conn);
+    };
+
+	//绑定发送文字的函数
+	$("#send_btn").on('click',function(){
+		if($(this).hasClass('disabled')) return;
+		sendText();
+	});
+
+	//点击发送音频，开始录音
+	$('#send_voice').click(function(){
+		if($(this).hasClass('disabled')) return;
+		if ( audioMaking ) {
+			return;
+		}
+		audioMaking = true;
+		$('#status_bar').show();
+		Cef.Ext.StartRecord();
+	});
+	//绑定发送音频的函数
+	$("#btn_send_voice").on('click',function(){
+		//Cef.Ext.CancelRecord();
+		//Cef.Ext.SaveRecord();//保存录音
+		Cef.Ext.SendRecord();
+		
+		sendAudio();
+	});
+	//绑定取消录音
+	$("#cancel").on('click',function(){
+		Cef.Ext.CancelRecord();
+		audioMaking = false;
+		$('#status_bar').hide();
+	});
+
+	//发送文字的函数逻辑
+    var sendText = function() {
+        if (textSending) {
+            return;
+        }
+        textSending = true;
+        var msg = $('#txt_message').val();
+		if (msg == null || msg.length == 0 ||msg.replace(/\s+/g,"").length==0) {
+			$('#txt_message').val("");
+			textSending = false;
+			return 0;
+		}
+        var to = curChatUserId;
+        if (to == null) {
+            return;
+        }
+        var options = {
+            to : to,
+            msg : msg,
+            type : "chat"/*,
+			conversation_id:cid*/
+        };
+        //easemobwebim-sdk发送文本消息的方法 to为发送给谁，msg为文本消息对象
+        conn.sendTextMessage(options);
+        //当前登录人发送的信息在聊天窗口中原样显示
+        var msgtext = msg.replace(/\n/g, '<br>');
+		appendMsg(0, msgtext, 'text');
+		$('#txt_message').val("");
+        $('#txt_message').focus();
+
+        setTimeout(function() {
+            textSending = false;
+        }, 1000);
+    };
+    var audtype = {
+        "mp3" : true,
+        "wma" : true,
+        "wav" : true,
+        "amr" : true,
+        "avi" : true
+    };
+	//发送音频消息时调用的方法
+	var sendAudio = function() {
+		audioMaking = false;
+		$('#status_bar').hide();
+		var to = curChatUserId;
+		if (to == null) {
+			return;
+		}
+
+		var filepath = Cef.Ext.GetVoicePath();
+		var filedata = Cef.Ext.GetVoiceData();
+		//var filepath = 'D:\\Download\\test.amr';
+		var filesize = Cef.Ext.GetFileSize(filepath);
+		//var filesize = 3622;
+
+		var filetype = '';
+
+		var pos1 = filepath.lastIndexOf('/');
+		var pos2 = filepath.lastIndexOf('\\');
+		var pos = Math.max(pos1, pos2)
+		var filename = filepath.substring(pos + 1);
+		//alert(filename);
+		var length = Cef.Ext.GetVoiceLength(filepath);//音频时长
+
+		var index = filename.lastIndexOf(".");
+		if (index != -1) {
+			filetype = filename.substring(index+1).toLowerCase();
+		}
+		//alert(filetype);
+
+		appendMsg(0, {url:filepath, filename:filename, length:length}, 'audio');
+		
+    };
+
+	//收到文本消息的回调方法
+	var handleTextMessage= function(message){
+		var from = message.from;//消息的发送者
+		var mestype = message.type;//消息发送的类型是群组消息还是个人消息
+		var messageContent = message.data;//文本消息体
+		appendMsg(1, messageContent, 'text');
+	};
+	//处理图片的接受消息逻辑
+	var handlePictureMessage = function(message){
+		var  imgurl = message.url;
+		appendMsg(1,imgurl,'pic');
+	};
+	//处理音频任务的消息逻辑
+    var handleAudioMessage = function(message) {
+        var filename = message.filename;
+        var filetype = message.filetype;
+        var from = message.from;
+        var mestype = message.type;//消息发送的类型是群组消息还是个人消息
+        var contactDivId = from;
+        var options = message;
+        options.onFileDownloadComplete = function(response, xhr) {
+            //var objectURL = Easemob.im.Helper.parseDownloadResponse.call(this, response);
+            /*var audio = document.createElement("audio");
+            if (Easemob.im.Helper.getIEVersion() != 9 && ("src" in audio) && ("controls" in audio)) {
+                audio.onload = function() {
+                    audio.onload = null;
+                    window.URL && window.URL.revokeObjectURL && window.URL.revokeObjectURL(audio.src);
+                };
+                audio.onerror = function() {
+                    audio.onerror = null;
+                    appendMsg(1, "当前浏览器不支持播放此音频:" + (filename || ''), 'text');
+                };
+                audio.controls = "controls";
+                audio.src = objectURL;
+                appendMsg(1, {filename : filename || '', data : audio}, 'audio');
+                //audio.play();
+                return;
+            } else {
+                appendMsg(1, {filename : filename || '', data : {currentSrc: objectURL}, audioShim: true}, 'audio');
+            }*/
+            //appendMsg(1, objectURL, 'audio');
+            appendMsg(1, message, 'audio');
+        };
+        options.onFileDownloadError = function(e) {
+            appendMsg(1, e.msg + ",下载音频" + filename + "失败", 'text');
+        };
+        options.headers = {
+            "Accept" : "audio/mp3"
+        };
+        Easemob.im.Helper.download(options);
+    };
+
+	$("#txt_message").keydown(function(event) {
+		if (event.altKey && event.keyCode == 13) {
+			e = $(this).val();
+			$(this).val(e + '\n');
+		} else if (event.ctrlKey && event.keyCode == 13) {
+			//e = $(this).val();
+			//$(this).val(e + '<br>');
+			event.returnValue = false;
+			sendText();
+			return false;
+		} else if (event.keyCode == 13) {
+			event.returnValue = false;
+			sendText();
+			return false;
+		}
+	});
+
+	//登录函数逻辑
+	var login = function() {
+		//环信相关的登录
+		var user =  curUserId;
+		//var pass = '123456';
+		var pass = Cef.User.GetUserPwd();
+		if (user == '' || pass == '') {
+			alert("请输入用户名和密码");
+			return;
+		}
+		conn.open({
+			apiUrl : Easemob.im.config.apiURL,
+			user : user,
+			pwd : pass,
+            appKey : Easemob.im.config.appkey
+			//连接时提供appkey
+			//appKey : appkey
+			//accessToken : 'YWMt8bfZfFk5EeSiAzsQ0OXu4QAAAUpoZFOMJ66ic5m2LOZRhYUsRKZWINA06HI'
+		});
+
+		return false;
+	};
+	login();//自动登录
+	
+	//断开服务	
+	var  closeServer = function(){
+		closeShow('服务已断开');
+		if(timeLoop) clearInterval(timeLoop);//清除计时器
+		if(playingT) clearTimeout(playingT);
+		$('#trans_list ul li').eq(play_index).find('i').removeClass('play').addClass('stop');
+
+		//关闭环信连接
+		conn.close();
+	};
+
+	var closeShow = function(msg){
+		$("#trans_list ul").parent().append('<div class="closed">'+msg+'</div>');
+		//设定滚动条
+		$('.scroll-pane').jScrollPane();
+		var true_h = $('#trans_list').find('.jspPane').height();
+		var box_h = $('#trans_list').find('.jspContainer').height();
+		if(true_h>box_h) {
+			$('#trans_list').find('.jspContainer').scrollTop(true_h-box_h);
+		}
+
+		$('#send_btn').addClass('disabled');
+		$('#send_voice').addClass('disabled');
+		$('#status_bar').hide();
+	};
+
+
+	
+	//处理消息的方法
+	var appendMsg = function (who,message,type){
+		if(type=='text'){
+            localMsg = message;
+			if(who==1){
+				$("#trans_list ul").append('<li class="r"><div class="avatar"><img src="'+curChatUserAvatar+'" /></div><p>'+localMsg+'</p></li>');
+			}else {//me
+				$("#trans_list ul").append('<li class="l"><div class="avatar"><img src="'+curUserAvatar+'" /></div><p>'+localMsg+'</p></li>');
+			}
+		}else if(type == 'pic'){
+			localMsg =' <img src="'+message+'" ondblclick="imageView(\''+message+'\')">';
+			if(who==1){
+				$("#trans_list ul").append('<li class="r"><div class="avatar"><img src="'+curChatUserAvatar+'" /></div><p>'+localMsg+'</p></li>');
+			}else {//me
+				$("#trans_list ul").append('<li class="l"><div class="avatar"><img src="'+curUserAvatar+'" /></div><p>'+localMsg+'</p></li>');
+			}
+
+			var image=new Image();
+			image.src=message;
+			image.onload = function(){//图片加载完成后设定滚动条
+				$('.scroll-pane').jScrollPane();
+				var true_h = $('#trans_list').find('.jspPane').height();
+				var box_h = $('#trans_list').find('.jspContainer').height();
+				if(true_h>box_h) {
+					$('#trans_list').find('.jspContainer').scrollTop(true_h-box_h);
+				}
+			}
+		}/*else if(type == 'audio'){
+			localMsg = message.filename;
+
+			var messageP = $('<p>'+localMsg+'<br></p>');
+			message.data.nodeType && $(message.data).appendTo(messageP);
+
+			if(message.audioShim) {
+				var t = new Date().getTime();
+				$('<br><span class="'+t+'"></span><button class="play'+t+'">播放</button><button style="display:none" class="play'+t+'">暂停</button>').appendTo(messageP);
+			}
+			var lineLi = $('<li></li>');
+			$('<div class="avatar"><img src="./images/photo.png" /></div>').appendTo(lineLi);
+			if(who==1){
+				lineLi.attr("class", "r");
+			}else {//me
+				lineLi.attr("class", "l");
+			}
+			messageP.appendTo(lineLi);
+			lineLi.appendTo($("#trans_list ul"));
+		}*/else if(type == 'audio'){
+			var w = 30;
+			if(message.length>3) w = w*(Math.round(message.length/3));
+			if(w>260) w = 260;
+			//localMsg ='<i class="voice stop"></i><span class="time">3s</span>';
+			localMsg ='<i class="voice stop" style="width:'+w+'px" data-time="'+message.length+'" data-url=="'+message.url+'" data-file="'+message.filename+'" onclick="playAudio(this)"></i><span class="time">'+message.length+'s</span>';
+			if(who==1){
+				$("#trans_list ul").append('<li class="r"><div class="avatar"><img src="'+curChatUserAvatar+'" /></div><p>'+localMsg+'</p></li>');
+			}else {//me
+				$("#trans_list ul").append('<li class="l"><div class="avatar"><img src="'+curUserAvatar+'" /></div><p>'+localMsg+'</p></li>');
+			}
+		}
+
+		//设定滚动条
+        if(type == 'text' || type == 'audio') {
+			$('.scroll-pane').jScrollPane();
+			var true_h = $('#trans_list').find('.jspPane').height();
+			var box_h = $('#trans_list').find('.jspContainer').height();
+			if(true_h>box_h) {
+				$('#trans_list').find('.jspContainer').scrollTop(true_h-box_h);
+			}
+		}/*
+        if(type == 'audio' && message.audioShim) {
+            setTimeout(function(){
+                playAudioShim(d.find('.'+t), message.data.currentSrc, t);
+            }, 0);
+        }*/
+	};
+
+	//播放音频
+	var playingT ='', play_index='';
+	var playAudio = function (dom){
+		var url = $(dom).attr('data-url');
+		var filename = $(dom).attr('data-file');
+		var t = $(dom).attr('data-time');
+		if($(dom).hasClass('stop')) {//to play
+			var index = $(dom).parent().parent().index();
+			if(play_index != '' && play_index !=index) {
+				stopPlaying();//停止其它播放
+			}
+
+			$(dom).removeClass('stop').addClass('play');
+			Cef.Ext.PlayAudio(url, filename);
+			play_index = index;
+			playingT = setTimeout('stopPlaying()', t*1000);
+		}
+		else {//to stop
+			$(dom).removeClass('play').addClass('stop');
+			//Cef.Ext.StopAudio();
+		}
+		return url;
+	}
+	var stopPlaying = function (){
+		if(play_index == '') return;
+
+		//有音频正在播放，则停止
+		//Cef.Ext.StopAudio();
+		$('#trans_list ul li').eq(play_index).find('i').removeClass('play').addClass('stop');
+		if(playingT) clearTimeout(playingT);
+		play_index ='';
+	}
+	//预览图片
+	var imageView = function (url){
+		Cef.Ext.ViewImage(url);
+	}
+</script>
+<!-- 环信end -->
+</body>
+</html>

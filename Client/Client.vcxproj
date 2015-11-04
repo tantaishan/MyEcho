@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C6D73508-ADDE-48D6-810C-0C481DCBDAE7}</ProjectGuid>
+    <RootNamespace>Client</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)OutPutObj\$(ProjectName)\$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)OutPutObj\$(ProjectName)\$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../amqcpp/include;../cef1;../vld/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>..\debug\$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>../lib/CxImage_Depends;../lib;../cef1/lib/Release;../vld/lib/Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>jasper.lib;jbig.lib;Jpeg.lib;libdcr.lib;mng.lib;png.lib;Tiff.lib;zlib.lib;libcef.lib;librabbitmq.4.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../amqcpp/include;../cef1;../vld/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <OutputFile>..\bin\MyEcho$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>../lib/CxImage_Depends;../lib;../cef1/lib/Release;../vld/lib/Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>jasper.lib;jbig.lib;Jpeg.lib;libdcr.lib;mng.lib;png.lib;Tiff.lib;zlib.lib;libcef.lib;librabbitmq.4.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PreBuildEvent>
+      <Command>echo "$(SolutionDir)tool\7z.exe" a -tzip "$(SolutionDir)bin\skin.skn" "$(SolutionDir)skin\*"
+"$(SolutionDir)tool\7z.exe" a -tzip "$(SolutionDir)bin\skin.skn" "$(SolutionDir)skin\*"
+echo "$(SolutionDir)tool\bin2h.exe"$(SolutionDir)bin\skin.skn" "$(SolutionDir)Client\"
+$(SolutionDir)tool\bin2h.exe $(SolutionDir)bin\skin.skn $(SolutionDir)Client\</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>if not exist "$(SolutionDir)bin\html" md "$(SolutionDir)bin\html"
+xcopy "$(SolutionDir)debug\html\*.*" "$(SolutionDir)bin\html" /E /Y /C</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="AudioPlayer.h" />
+    <ClInclude Include="biz\EasemobBizApi.h" />
+    <ClInclude Include="biz\TransnBizApi.h" />
+    <ClInclude Include="CefWebClient.h" />
+    <ClInclude Include="Client.h" />
+    <ClInclude Include="ClientV8ExtHandler.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="CrashHandler.h" />
+    <ClInclude Include="CtxFeedbackWnd.h" />
+    <ClInclude Include="downloader.h" />
+    <ClInclude Include="DulibEx.h" />
+    <ClInclude Include="FileMgr.h" />
+    <ClInclude Include="FolderFileSelectDialog.h" />
+    <ClInclude Include="gif\GifAnimation.h" />
+    <ClInclude Include="gif\PictureEx.h" />
+    <ClInclude Include="gif\winimage.h" />
+    <ClInclude Include="ImgToolWnd.h" />
+    <ClInclude Include="ImgTransDlg.h" />
+    <ClInclude Include="LoginWnd.h" />
+    <ClInclude Include="media\AMRDecoder.h" />
+    <ClInclude Include="media\MCIPlayer.h" />
+    <ClInclude Include="media\WaveRecorder.h" />
+    <ClInclude Include="media\WaveDef.h" />
+    <ClInclude Include="media\WavePlayer.h" />
+    <ClInclude Include="NewerTaskWnd.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="BrowserUiHandler.h" />
+    <ClInclude Include="PlayGifWnd.h" />
+    <ClInclude Include="TaskNotifyWnd.h" />
+    <ClInclude Include="ViewImageWnd.h" />
+    <ClInclude Include="WebBrowser.h" />
+    <ClInclude Include="PictureWnd.h" />
+    <ClInclude Include="PromptDialog.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="TextTransDlg.h" />
+    <ClInclude Include="TransChatWebWnd.h" />
+    <ClInclude Include="TransChatWnd.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SystemTray.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TopMenuWnd.h" />
+    <ClInclude Include="TransEdit.h" />
+    <ClInclude Include="TrayMenuWnd.h" />
+    <ClInclude Include="typedef.h" />
+    <ClInclude Include="VoiceTransDlg.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AudioPlayer.cpp" />
+    <ClCompile Include="biz\EasemobBizApi.cpp" />
+    <ClCompile Include="biz\TransnBizApi.cpp" />
+    <ClCompile Include="CefWebClient.cpp" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="ClientV8ExtHandler.cpp" />
+    <ClCompile Include="config.cpp" />
+    <ClCompile Include="CrashHandler.cpp" />
+    <ClCompile Include="CtxFeedbackWnd.cpp" />
+    <ClCompile Include="downloader.cpp" />
+    <ClCompile Include="DulibEx.cpp" />
+    <ClCompile Include="FileMgr.cpp" />
+    <ClCompile Include="FolderFileSelectDialog.cpp" />
+    <ClCompile Include="gif\GifAnimation.cpp" />
+    <ClCompile Include="gif\PictureEx.cpp" />
+    <ClCompile Include="gif\winimage.cpp" />
+    <ClCompile Include="ImgToolWnd.cpp" />
+    <ClCompile Include="ImgTransDlg.cpp" />
+    <ClCompile Include="LoginWnd.cpp" />
+    <ClCompile Include="media\AMRDecoder.cpp" />
+    <ClCompile Include="media\MCIPlayer.cpp" />
+    <ClCompile Include="media\WaveRecorder.cpp" />
+    <ClCompile Include="media\WavePlayer.cpp" />
+    <ClCompile Include="NewerTaskWnd.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="PlayGifWnd.cpp" />
+    <ClCompile Include="TaskNotifyWnd.cpp" />
+    <ClCompile Include="ViewImageWnd.cpp" />
+    <ClCompile Include="WebBrowser.cpp" />
+    <ClCompile Include="PictureWnd.cpp" />
+    <ClCompile Include="PromptDialog.cpp" />
+    <ClCompile Include="TextTransDlg.cpp" />
+    <ClCompile Include="TransChatWebWnd.cpp" />
+    <ClCompile Include="TransChatWnd.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SystemTray.cpp" />
+    <ClCompile Include="TopMenuWnd.cpp" />
+    <ClCompile Include="TransEdit.cpp" />
+    <ClCompile Include="TrayMenuWnd.cpp" />
+    <ClCompile Include="VoiceTransDlg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Client.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Client.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\amqcpp\amqcpp.vcxproj">
+      <Project>{29e9e840-eff4-403d-b7eb-9740312af8a5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\amr\amr.vcxproj">
+      <Project>{d4020a90-1e99-445e-8214-1e70eaa3dd80}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\base\base.vcxproj">
+      <Project>{7d0c97fe-a464-4f55-ba04-2cb88a2c5499}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\cef1\libcef_dll_wrapper.vcxproj">
+      <Project>{a9d6dc71-c0dc-4549-aea0-3b15b44e86a9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.vcxproj">
+      <Project>{abfc444f-4bcd-4bd6-bf72-0dad1d49202d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\CxImage\CxImage\cximage.vcxproj">
+      <Project>{9f006419-4d29-4659-81a8-a2d2d4fd53f3}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Dulib\Dulib.vcxproj">
+      <Project>{89cbce69-7dea-4425-aace-0f121600d799}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="Client.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

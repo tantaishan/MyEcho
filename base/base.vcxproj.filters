@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="cmdline">
+      <UniqueIdentifier>{41567a78-d3ca-4e4c-8633-4657d41c814a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="process">
+      <UniqueIdentifier>{b359ee8f-5ff9-4d60-ba42-3939e56ce23a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="files">
+      <UniqueIdentifier>{058f2095-db1a-4749-b8bc-0074227ae510}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="str">
+      <UniqueIdentifier>{339961a9-a80f-435c-b7a2-03401c93d849}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="precompile">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="log">
+      <UniqueIdentifier>{4311e297-f4f4-453d-a084-af445811b6d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lock">
+      <UniqueIdentifier>{981cd000-98a7-4f46-ba69-fdb17ee0742d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="debugger">
+      <UniqueIdentifier>{fe70d2cb-d12c-45ec-a5e6-1c0b3e5cfdb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pipe">
+      <UniqueIdentifier>{b438aa4f-e57e-4cbe-af6e-de7d98234524}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crypt">
+      <UniqueIdentifier>{598e2a9b-ce9b-4883-8a79-b35ade2e06a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="win">
+      <UniqueIdentifier>{25136b17-5fec-44e0-b955-1bfb0f154c8a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>precompile</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>precompile</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdline\base_switches.h">
+      <Filter>cmdline</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdline\command_line.h">
+      <Filter>cmdline</Filter>
+    </ClInclude>
+    <ClInclude Include="process\kill.h">
+      <Filter>process</Filter>
+    </ClInclude>
+    <ClInclude Include="process\launch.h">
+      <Filter>process</Filter>
+    </ClInclude>
+    <ClInclude Include="process\process_handle.h">
+      <Filter>process</Filter>
+    </ClInclude>
+    <ClInclude Include="process\scoped_process_information.h">
+      <Filter>process</Filter>
+    </ClInclude>
+    <ClInclude Include="files\file_path.h">
+      <Filter>files</Filter>
+    </ClInclude>
+    <ClInclude Include="str\std_str_ext.h">
+      <Filter>str</Filter>
+    </ClInclude>
+    <ClInclude Include="scoped.h" />
+    <ClInclude Include="scoped_handle.h" />
+    <ClInclude Include="log\logging.h">
+      <Filter>log</Filter>
+    </ClInclude>
+    <ClInclude Include="debug.h" />
+    <ClInclude Include="base_types.h" />
+    <ClInclude Include="str\stdcxx.h">
+      <Filter>str</Filter>
+    </ClInclude>
+    <ClInclude Include="lock\lock.h">
+      <Filter>lock</Filter>
+    </ClInclude>
+    <ClInclude Include="debugger\debug_on_start_win.h">
+      <Filter>debugger</Filter>
+    </ClInclude>
+    <ClInclude Include="debugger\debugger.h">
+      <Filter>debugger</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe\named_pipe.h">
+      <Filter>pipe</Filter>
+    </ClInclude>
+    <ClInclude Include="crypt\Rijndael.h">
+      <Filter>crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="win\module.h">
+      <Filter>win</Filter>
+    </ClInclude>
+    <ClInclude Include="win\shadow_window.h">
+      <Filter>win</Filter>
+    </ClInclude>
+    <ClInclude Include="win\wrapped_window_proc.h">
+      <Filter>win</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cmdline\base_switches.cc">
+      <Filter>cmdline</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdline\command_line.cpp">
+      <Filter>cmdline</Filter>
+    </ClCompile>
+    <ClCompile Include="process\kill_win.cc">
+      <Filter>process</Filter>
+    </ClCompile>
+    <ClCompile Include="process\launch.cc">
+      <Filter>process</Filter>
+    </ClCompile>
+    <ClCompile Include="process\launch_win.cc">
+      <Filter>process</Filter>
+    </ClCompile>
+    <ClCompile Include="process\process_handle_win.cc">
+      <Filter>process</Filter>
+    </ClCompile>
+    <ClCompile Include="process\scoped_process_information.cc">
+      <Filter>process</Filter>
+    </ClCompile>
+    <ClCompile Include="files\file_path.cc">
+      <Filter>files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>precompile</Filter>
+    </ClCompile>
+    <ClCompile Include="str\stdcxx.cpp">
+      <Filter>str</Filter>
+    </ClCompile>
+    <ClCompile Include="lock\lock.cpp">
+      <Filter>lock</Filter>
+    </ClCompile>
+    <ClCompile Include="debugger\debug_on_start_win.cc">
+      <Filter>debugger</Filter>
+    </ClCompile>
+    <ClCompile Include="debugger\debugger.cc">
+      <Filter>debugger</Filter>
+    </ClCompile>
+    <ClCompile Include="debugger\debugger_win.cc">
+      <Filter>debugger</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe\named_pipe.cc">
+      <Filter>pipe</Filter>
+    </ClCompile>
+    <ClCompile Include="crypt\Rijndael.cpp">
+      <Filter>crypt</Filter>
+    </ClCompile>
+    <ClCompile Include="win\module.cc">
+      <Filter>win</Filter>
+    </ClCompile>
+    <ClCompile Include="win\shadow_window.cc">
+      <Filter>win</Filter>
+    </ClCompile>
+    <ClCompile Include="win\wrapped_window_proc.cc">
+      <Filter>win</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

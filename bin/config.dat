@@ -1,0 +1,30 @@
+{
+	"client_config" : {
+		"faq_web" : "file://E:\\dev\\MyEcho\\Source\\MyEcho\\debug\\html\\index.html",
+		"newer_task" : "http://10.0.118.98:8080/IOL_ME4/NoviceTask/gotoNewerTask/"
+	},
+	"amqp_config" : {
+		"conn" : {
+			"host" : "10.0.110.11",
+			"port" : 5672,
+			"user" : "transn_me",
+			"pwd" : "OTchR1JLYD8sLy8kOSA8YHx/fnl4ew=="
+		},
+		"micro" : {
+			"exchange_name" : "imExchange",
+			"key" : "charge.picture"
+		},
+		"trans" : {
+			"exchange_name" : "imExchange",
+			"key" : "conversation.start"
+		},
+		"trans_close" : {
+			"exchange_name" : "imExchange",
+			"key" : "conversation.close.me"
+		}
+	},
+	"biz_url" : {
+	    "login" : "http://10.0.110.11:8280/IOL_ME4/user/login/",
+		"helptask" : "http://10.0.110.11:8280/IOL_ME4/helptask/"
+	}
+}

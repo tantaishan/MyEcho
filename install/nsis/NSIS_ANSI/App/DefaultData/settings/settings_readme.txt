@@ -1,0 +1,1 @@
+Your NSIS settings registry files will go here
